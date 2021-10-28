@@ -19,7 +19,7 @@ export const AuthProvider = (props: React.PropsWithChildren<{}>) => {
   const [isLogin, setIsLogin] = useState(false);
 
   const refreshToken = () => {
-    axios.post('/api/refresh-token')
+    axios.post('/refresh-token')
       .then((res) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
 
@@ -31,7 +31,7 @@ export const AuthProvider = (props: React.PropsWithChildren<{}>) => {
           refreshToken()
         }, (expires_in * 1000) - 500);
 
-        axios.get('/api/user')
+        axios.get('/user')
           .then(res => {
             setUser(res.data.user);
           })

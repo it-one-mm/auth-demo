@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const logout = () => {
 
-      axios.post('/api/logout')
+      axios.post('/logout')
       .then(res => { 
         console.log(res);
         

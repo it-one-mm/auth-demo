@@ -11,7 +11,7 @@ const Login = () => {
 
   const onFinish = (values: User) => {
 
-      axios.post('/api/login', values)
+      axios.post('/login', values)
       .then(res => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
 
