@@ -6,7 +6,7 @@ import Login from './views/Login';
 import { AuthProvider } from './store';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000/api';
+axios.defaults.baseURL = 'https://auth.test/api';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.common['Accept'] = 'application/json';
