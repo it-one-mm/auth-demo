@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://auth.test/:path*"
+      "source": "/app/:path*",
+      "destination": "https://auth.test/api/:path*"
     },
     {
-      "source": "/api/:path*/",
-      "destination": "https://auth.test/:path*/"
+      "source": "/app/:path*/",
+      "destination": "https://auth.test/api/:path*/"
     }
   ]
 }
