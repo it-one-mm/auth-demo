@@ -21,6 +21,7 @@ const Dashboard = () => {
       .finally(() => {
         history.push('/login');
 
+        auth?.setIsLogin(false);
         auth?.setUser(null);        
       });
 
