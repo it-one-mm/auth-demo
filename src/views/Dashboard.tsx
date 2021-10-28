@@ -30,7 +30,7 @@ const Dashboard = () => {
   }
 
   if (auth) {
-    if (!(auth.user)) {
+    if (!(auth.isLogin)) {
       return <Redirect to='/login' />
     }
   }

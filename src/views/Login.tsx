@@ -7,22 +7,23 @@ import axios from 'axios';
 
 const Login = () => {
   const history = useHistory();
-  // const client = useClient();
   const auth = useAuth();
 
   const onFinish = (values: User) => {
-    // if (client) {
+
       axios.post('/login', values)
       .then(res => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.token}`;
 
-        if (auth)
+        if (auth) {
           auth.setUser(res.data.user);
+          auth.setIsLogin(true);
+        }
 
         history.push('/');
       })
       .catch(console.log);
-    // }
+
   };
 
   const onFinishFailed = (errorInfo: ValidateErrorEntity<User>) => {
@@ -30,7 +31,7 @@ const Login = () => {
   };
 
   if (auth) {
-    if (auth.user)
+    if (auth.isLogin)
       return <Redirect exact to="/" />;
   }
 
