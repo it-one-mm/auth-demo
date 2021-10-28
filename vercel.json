@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/app/:path*",
-      "destination": "https://auth.test/api/:path*"
+      "destination": "https://phonebookmm-api.herokuapp.com/api/:path*"
     },
     {
       "source": "/app/:path*/",
-      "destination": "https://auth.test/api/:path*/"
+      "destination": "https://phonebookmm-api.herokuapp.com/api/:path*/"
     }
   ]
 }
