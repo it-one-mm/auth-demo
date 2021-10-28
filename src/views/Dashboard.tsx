@@ -6,13 +6,12 @@ import { useAuth } from '../store'
 
 const Dashboard = () => {
 
-  // const client = useClient();
   const auth = useAuth();
   const history = useHistory();
 
   const logout = () => {
-    // if (client) {
-      axios.post('/logout')
+
+      axios.post('/api/logout')
       .then(res => { 
         console.log(res);
         
@@ -25,9 +24,6 @@ const Dashboard = () => {
         auth?.setUser(null);        
       });
 
-      
-
-    // }
   }
 
   if (auth) {
